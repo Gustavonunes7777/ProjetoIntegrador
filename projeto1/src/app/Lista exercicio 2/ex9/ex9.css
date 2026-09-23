@@ -1,0 +1,45 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  max-width: 650px;
+}
+
+.tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-produtos th {
+  background-color: #f4f4f4;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+.sem-estoque {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.estoque-baixo {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.estoque-disponivel {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}

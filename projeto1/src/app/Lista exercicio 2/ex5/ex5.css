@@ -1,0 +1,47 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+}
+
+.lista-nomes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item-nome {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.posicao {
+  font-weight: bold;
+  color: #666;
+  min-width: 30px;
+}
+
+.nome {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.badge-primeiro {
+  background-color: #d1e7dd;
+  color: #0f5132;
+}
+
+.badge-ultimo {
+  background-color: #f8d7da;
+  color: #842029;
+}

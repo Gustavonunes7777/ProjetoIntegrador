@@ -1,0 +1,32 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  max-width: 650px;
+}
+
+.tabela-produtos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.tabela-produtos th,
+.tabela-produtos td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+.tabela-produtos th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.tabela-produtos tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.valor-total {
+  font-weight: bold;
+  color: #2c3e50;
+}

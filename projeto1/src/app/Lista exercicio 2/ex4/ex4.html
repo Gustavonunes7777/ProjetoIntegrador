@@ -1,0 +1,22 @@
+<div class="container">
+  <h3>Estoque do Produto</h3>
+
+  <div class="card-produto">
+    <h4>{{ nomeProduto }}</h4>
+    <p>Quantidade: <strong>{{ quantidadeEstoque }}</strong></p>
+
+    <div class="status">
+      <p *ngIf="quantidadeEstoque > 0" class="disponivel">Produto disponível</p>
+      <p *ngIf="quantidadeEstoque === 0" class="sem-estoque">Produto sem estoque</p>
+    </div>
+
+    <div class="acoes">
+      <button (click)="removerEstoque()" [disabled]="quantidadeEstoque === 0">
+        - Remover unidade
+      </button>
+      <button (click)="adicionarEstoque()">
+        + Adicionar unidade
+      </button>
+    </div>
+  </div>
+</div>

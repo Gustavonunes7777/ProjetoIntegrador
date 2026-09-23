@@ -1,0 +1,33 @@
+<div class="container">
+  <h3>Classificação de Stock dos Produtos</h3>
+
+  <table class="tabela-produtos">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Qtd. Stock</th>
+        <th>Status do Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos">
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td>
+          <span [ngClass]="{
+                  'sem-estoque': produto.quantidade === 0,
+                  'estoque-baixo': produto.quantidade >= 1 && produto.quantidade <= 5,
+                  'estoque-disponivel': produto.quantidade > 5
+                }"
+                class="status-badge">
+            <ng-container *ngIf="produto.quantidade === 0">Sem estoque</ng-container>
+            <ng-container *ngIf="produto.quantidade >= 1 && produto.quantidade <= 5">Estoque baixo</ng-container>
+            <ng-container *ngIf="produto.quantidade > 5">Estoque disponível</ng-container>
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

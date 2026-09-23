@@ -1,0 +1,13 @@
+<div class="container">
+  <h3>Lista de Nomes</h3>
+
+  <ul class="lista-nomes">
+    <li *ngFor="let nome of nomes; let i = index; let isFirst = first; let isLast = last" class="item-nome">
+      <span class="posicao">#{{ i + 1 }}</span>
+      <span class="nome">{{ nome }}</span>
+
+      <span *ngIf="isFirst" class="badge badge-primeiro">Primeiro da lista</span>
+      <span *ngIf="isLast" class="badge badge-ultimo">Último da lista</span>
+    </li>
+  </ul>
+</div>

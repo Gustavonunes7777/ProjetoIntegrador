@@ -1,0 +1,25 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+.mensagem {
+  margin-top: 12px;
+  padding: 10px;
+  background-color: #e8f5e9;
+  color: #2e7d32;
+  border-left: 4px solid #2e7d32;
+  border-radius: 4px;
+}

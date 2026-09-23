@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>Listagem de Produtos</h3>
+
+  <table class="tabela-produtos">
+    <thead>
+      <tr>
+        <th>Posição</th>
+        <th>Nome</th>
+        <th>Preço Un.</th>
+        <th>Qtd. Stock</th>
+        <th>Total em Stock</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let produto of produtos; let i = index">
+        <td>#{{ i + 1 }}</td>
+        <td>{{ produto.nome }}</td>
+        <td>{{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}</td>
+        <td>{{ produto.quantidade }}</td>
+        <td class="valor-total">
+          {{ (produto.preco * produto.quantidade) | currency:'BRL':'symbol':'1.2-2' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

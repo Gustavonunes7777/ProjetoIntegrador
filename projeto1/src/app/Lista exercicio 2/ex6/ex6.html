@@ -1,0 +1,29 @@
+<div class="container">
+  <h3>Gerenciamento de Lista de Nomes</h3>
+
+  <div class="acoes">
+    <button (click)="removerUltimo()" [disabled]="nomes.length === 0">
+      Remover último
+    </button>
+    <button (click)="limparLista()" [disabled]="nomes.length === 0" class="btn-perigo">
+      Limpar lista
+    </button>
+    <button (click)="restaurarLista()" class="btn-sucesso">
+      Restaurar lista
+    </button>
+  </div>
+
+  <p *ngIf="nomes.length > 0" class="total-contador">
+    Total de nomes: <strong>{{ nomes.length }}</strong>
+  </p>
+
+  <ul *ngIf="nomes.length > 0" class="lista-nomes">
+    <li *ngFor="let nome of nomes" class="item-nome">
+      {{ nome }}
+    </li>
+  </ul>
+
+  <p *ngIf="nomes.length === 0" class="mensagem-vazia">
+    Nenhum nome cadastrado
+  </p>
+</div>

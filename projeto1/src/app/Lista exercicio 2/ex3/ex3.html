@@ -1,0 +1,17 @@
+<div class="container">
+  <h3>Classificação por Idade</h3>
+
+  <p><strong>Idade atual:</strong> {{ idade }} anos</p>
+
+  <div class="classificacao">
+    <p *ngIf="idade < 12">Categoria: <span>Criança</span></p>
+    <p *ngIf="idade >= 12 && idade <= 17">Categoria: <span>Adolescente</span></p>
+    <p *ngIf="idade >= 18 && idade <= 59">Categoria: <span>Adulto</span></p>
+    <p *ngIf="idade >= 60">Categoria: <span>Idoso</span></p>
+  </div>
+
+  <div class="acoes">
+    <button (click)="diminuirIdade()" [disabled]="idade === 0">- Diminuir</button>
+    <button (click)="aumentarIdade()">+ Aumentar</button>
+  </div>
+</div>

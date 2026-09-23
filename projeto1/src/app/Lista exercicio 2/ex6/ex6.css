@@ -1,0 +1,73 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  max-width: 420px;
+}
+
+.acoes {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+button:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btn-perigo {
+  background-color: #f8d7da;
+  border-color: #f5c2c7;
+  color: #842029;
+}
+
+.btn-sucesso {
+  background-color: #d1e7dd;
+  border-color: #badbcc;
+  color: #0f5132;
+}
+
+.total-contador {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.lista-nomes {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.item-nome {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-nome:last-child {
+  border-bottom: none;
+}
+
+.mensagem-vazia {
+  padding: 12px;
+  background-color: #fff3cd;
+  color: #664d03;
+  border: 1px solid #ffecb5;
+  border-radius: 4px;
+  text-align: center;
+}

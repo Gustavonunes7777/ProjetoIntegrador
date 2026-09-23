@@ -1,0 +1,15 @@
+<div class="container">
+  <div *ngIf="usuarioLogado; else naoAutorizado" class="status autenticado">
+    <p>Usuário autenticado</p>
+  </div>
+
+  <ng-template #naoAutorizado>
+    <div class="status bloqueado">
+      <p>Acesso não autorizado</p>
+    </div>
+  </ng-template>
+
+  <button (click)="alternarStatus()">
+    {{ usuarioLogado ? 'Sair' : 'Entrar' }}
+  </button>
+</div>
