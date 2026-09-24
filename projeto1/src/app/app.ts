@@ -1,15 +1,13 @@
 import { Component } from '@angular/core';
+import { Exercicio2Module } from './Lista exercicio 2/exercicio2-module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  template: `
-    <main style="padding: 20px; font-family: sans-serif;">
-      <h1>Lista de Exercícios Angular</h1>
-      <p>Servidor ativo e pronto para os testes.</p>
-    </main>
-  `
+  imports: [ Exercicio2Module ],
+  templateUrl: './app.html',
+  styleUrls: ['./app.css']
 })
-export class AppComponent {
+export class App {
   title = 'projeto1';
 }

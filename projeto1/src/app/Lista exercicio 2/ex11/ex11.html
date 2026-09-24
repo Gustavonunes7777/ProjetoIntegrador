@@ -1,1 +1,19 @@
-<p>ex11 works!</p>
+<div class="container">
+  <div class="controles">
+    <button (click)="alternarFiltro()">
+      {{ somenteDisponiveis ? 'Mostrar Todos os Produtos' : 'Exibir Apenas Disponíveis' }}
+    </button>
+  </div>
+
+  <ul class="lista-produtos">
+    <ng-container *ngFor="let prod of produtos">
+      <li *ngIf="!somenteDisponiveis || prod.quantidade > 0" class="item-produto">
+        <span class="nome">{{ prod.nome }}</span>
+        <span class="preco">{{ prod.preco | currency:'BRL' }}</span>
+        <span class="quantidade" [class.sem-estoque]="prod.quantidade === 0">
+          Qtd: {{ prod.quantidade }}
+        </span>
+      </li>
+    </ng-container>
+  </ul>
+</div>

@@ -1,1 +1,43 @@
-<p>ex12 works!</p>
+<div class="container">
+  <h3>Cadastro Simplificado de Produtos</h3>
+
+  <div class="formulario">
+    <div class="campo">
+      <label for="nome">Nome do Produto:</label>
+      <input 
+        id="nome" 
+        type="text" 
+        [(ngModel)]="novoNome" 
+        placeholder="Ex: Monitor"
+      >
+    </div>
+
+    <div class="campo">
+      <label for="qtd">Quantidade:</label>
+      <input 
+        id="qtd" 
+        type="number" 
+        [(ngModel)]="novaQuantidade" 
+        placeholder="Ex: 10" 
+        min="0"
+      >
+    </div>
+
+    <button class="btn-cadastrar" (click)="cadastrarProduto()">Cadastrar</button>
+  </div>
+
+  <p *ngIf="mensagemErro" class="mensagem-erro">{{ mensagemErro }}</p>
+
+  <div class="listagem">
+    <h4>Produtos Cadastrados ({{ produtos.length }})</h4>
+
+    <p *ngIf="produtos.length === 0" class="sem-produtos">Nenhum produto cadastrado.</p>
+
+    <ul *ngIf="produtos.length > 0" class="lista-produtos">
+      <li *ngFor="let produto of produtos">
+        <span><strong>{{ produto.nome }}</strong> - Qtd: {{ produto.quantidade }}</span>
+        <button class="btn-excluir" (click)="excluirProduto(produto.id)">Excluir</button>
+      </li>
+    </ul>
+  </div>
+</div>

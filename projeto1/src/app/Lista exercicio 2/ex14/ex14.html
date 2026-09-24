@@ -1,1 +1,68 @@
-<p>ex14 works!</p>
+<div class="container">
+  <h2>Painel de Projetos Integradores</h2>
+
+  <div class="painel-controles">
+    <div class="estatisticas">
+      <span>Total de Projetos: <strong>{{ totalProjetos }}</strong></span>
+      <span>Concluídos: <strong class="texto-sucesso">{{ totalConcluidos }}</strong></span>
+    </div>
+
+    <button class="btn-filtro" (click)="alternarFiltroConcluidos()">
+      @if (ocultarConcluidos) {
+        Exibir Todos os Projetos
+      } @else {
+        Ocultar Projetos Concluídos
+      }
+    </button>
+  </div>
+
+  <div class="cards-grid">
+    @for (projeto of projetosFiltrados; track projeto.id; let i = $index) {
+      <div 
+        class="card-projeto" 
+        [class]="'status-' + projeto.status"
+        [class.nota-destaque]="projeto.nota !== undefined && projeto.nota >= 7"
+        [class.nota-atencao]="projeto.nota !== undefined && projeto.nota < 6"
+      >
+        <div class="card-header">
+          <span class="posicao">#{{ i + 1 }}</span>
+          <span class="badge-status">{{ projeto.status }}</span>
+        </div>
+
+        <h3>{{ projeto.titulo }}</h3>
+        <p><strong>Equipe:</strong> {{ projeto.equipe }}</p>
+
+        <div class="info-nota">
+          @if (projeto.nota !== undefined) {
+            <span><strong>Nota:</strong> {{ projeto.nota }}</span>
+          } @else {
+            <span class="sem-nota">Nota ainda não definida</span>
+          }
+        </div>
+
+        @if (projeto.entregue) {
+          <div class="badge-entregue">✓ Projeto entregue</div>
+        }
+
+        <div class="acoes">
+          <label for="select-status-{{ projeto.id }}">Alterar Status:</label>
+          <select 
+            id="select-status-{{ projeto.id }}"
+            [value]="projeto.status" 
+            #selectStatus 
+            (change)="alterarStatus(projeto.id, selectStatus.value)"
+          >
+            <option value="planejamento">Planejamento</option>
+            <option value="desenvolvimento">Desenvolvimento</option>
+            <option value="testes">Testes</option>
+            <option value="concluido">Concluído</option>
+          </select>
+        </div>
+      </div>
+    } @empty {
+      <div class="mensagem-vazia">
+        <p>Nenhum projeto encontrado para os critérios selecionados.</p>
+      </div>
+    }
+  </div>
+</div>

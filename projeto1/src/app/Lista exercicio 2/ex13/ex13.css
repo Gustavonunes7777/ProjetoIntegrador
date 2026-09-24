@@ -1,0 +1,97 @@
+.container {
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  max-width: 550px;
+}
+
+.resumo {
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  border: 1px solid #e9ecef;
+}
+
+.texto-sucesso { color: #28a745; }
+.texto-alerta { color: #dc3545; }
+
+.lista-tarefas {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista-tarefas li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border-left: 6px solid #ccc;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.prioridade-baixa { border-left-color: #28a745 !important; }
+.prioridade-media { border-left-color: #ffc107 !important; }
+.prioridade-alta { border-left-color: #dc3545 !important; }
+
+.tarefa-concluida {
+  background-color: #f8f9fa;
+  opacity: 0.85;
+}
+
+.info-tarefa {
+  display: flex;
+  flex-direction: column;
+}
+
+.titulo {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.riscado {
+  text-decoration: line-through;
+  color: #6c757d;
+}
+
+.detalhes {
+  font-size: 0.85rem;
+  color: #6c757d;
+  margin-top: 4px;
+}
+
+.status-acao {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.badge {
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.badge-sucesso { background-color: #d4edda; color: #155724; }
+.badge-pendente { background-color: #fff3cd; color: #856404; }
+
+button {
+  padding: 6px 12px;
+  border: 1px solid #007bff;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+button:hover { background-color: #0056b3; }
+
+.sem-tarefas {
+  color: #6c757d;
+  font-style: italic;
+}

@@ -1,1 +1,39 @@
-<p>ex10 works!</p>
+<div class="container">
+  <h3>Produtos em Promoção</h3>
+
+  <div class="cards-grid">
+    <div *ngFor="let produto of produtos" 
+         class="card-produto" 
+         [class.em-promocao]="produto.promocao">
+      
+      <div class="card-cabecalho">
+        <h4 [style.font-weight]="produto.promocao ? 'bold' : 'normal'">
+          {{ produto.nome }}
+        </h4>
+        <span *ngIf="produto.promocao" class="badge-promo">
+          Produto em promoção
+        </span>
+      </div>
+
+      <div class="card-corpo">
+        <p>Estoque: {{ produto.quantidade }} unid.</p>
+        
+        <p class="preco" 
+           [ngStyle]="{
+             'color': produto.promocao ? '#d9534f' : '#2c3e50',
+             'font-size': produto.promocao ? '1.25rem' : '1rem',
+             'font-weight': produto.promocao ? 'bold' : 'normal'
+           }">
+          Preço: {{ produto.preco | currency:'BRL':'symbol':'1.2-2' }}
+        </p>
+      </div>
+
+      <div class="card-rodape">
+        <button (click)="alternarPromocao(produto)" 
+                [class.btn-ativo]="produto.promocao">
+          {{ produto.promocao ? 'Desativar Promoção' : 'Ativar Promoção' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
